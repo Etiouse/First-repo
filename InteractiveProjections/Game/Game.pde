@@ -44,21 +44,25 @@ void mouseWheel(MouseEvent event) {
 
 void mouseDragged() {
   if (pmouseY > mouseY) {
-    if (rotX < PI/3){
-      rotX += coef/1000.0;
+    rotX += coef/1000.0;
+    if (rotX > PI/3){
+      rotX = PI/3;
     }
   } else if (pmouseY < mouseY) {
-    if (rotX > -PI/3){
-      rotX -= coef/1000.0;
+    rotX -= coef/1000.0;
+    if (rotX < -PI/3){
+      rotX = -PI/3;
     }
   }
   if (pmouseX > mouseX) {
-    if (rotZ < PI/3){
-      rotZ += coef/1000.0;
+    rotZ += coef/1000.0;
+    if (rotZ > PI/3){
+      rotZ = PI/3;
     }
   } else if (pmouseX < mouseX) {
-    if (rotZ > -PI/3){
-      rotZ -= coef/1000.0;
+    rotZ -= coef/1000.0;
+    if (rotZ < -PI/3){
+      rotZ = -PI/3;
     }
   }
 }
